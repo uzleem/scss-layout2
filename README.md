@@ -1,6 +1,6 @@
 # 소개
 
-CSS LAYOUT PROJECT 및 SCSS 활용
+SCSS를 활용한 웹페이지 LAYOUT 클론코딩
 
 1. FLEXBOX
 2. GRID
