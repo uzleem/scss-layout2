@@ -1,10 +1,109 @@
-@import "_style.scss";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Caladea:400&display=swap");
+@import "_title.scss";
+@import "_variable.scss";
 @import "_reset.scss";
 
-body {
-  background-color: black;
+* {
+  box-sizing: border-box;
 }
 
-h1 {
-  color: white;
+a {
+  text-decoration: none;
+  color: inherit;
+  @extend %title;
+}
+
+body {
+  height: 1000vh;
+  padding: 0px $sideSpace;
+}
+
+header {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0px $sideSpace;
+
+  background-color: $white;
+  display: flex;
+
+  nav {
+    width: 100%;
+    display: flex;
+    height: $headerHeight;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      @extend %title;
+
+      li {
+        opacity: 0.8;
+      }
+
+      li:hover {
+        color: $white;
+        opacity: 0.8;
+      }
+
+      li:nth-child(1) {
+        margin-right: 25px;
+      }
+    }
+  }
+}
+
+section {
+  // section
+  display: flex;
+  flex-direction: column;
+  margin-top: $headerHeight;
+
+  // 메인
+  .main {
+    @extend %main;
+
+    h4 {
+      @extend %title;
+      margin-bottom: 20px;
+    }
+    p {
+      display: block;
+      width: 30%;
+      text-align: center;
+      color: $white;
+      margin-bottom: $contentMargin;
+
+      @extend %middleText;
+    }
+    a {
+      @extend %borderA;
+    }
+  }
+
+  // data
+  .contentWrap {
+    @extend %contentWrap;
+    .contentText {
+      background-color: $buttonColorBeige1;
+    }
+  }
+  .contentWrap2 {
+    margin-top: $contentMargin;
+    @extend %contentWrap;
+
+    .contentText {
+      .gift {
+        text-align: center;
+        margin: 20px;
+        font-size: 8px;
+        font-weight: 100;
+      }
+      background-color: $buttonColorBeige2;
+    }
+  }
 }
