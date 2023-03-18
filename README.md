@@ -19,7 +19,7 @@ SCSS를 활용한 웹페이지 LAYOUT 클론코딩
 
 # 참고페이지
 
-[paint-box]https://paint-box.com/
+[paint-box](https://paint-box.com/)
 <br><br>
 
 # TODO
