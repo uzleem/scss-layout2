@@ -15,7 +15,10 @@ a {
 }
 
 body {
-  height: 1000vh;
+  height: 100%;
+}
+
+body > :not(.footer) {
   padding: 0px $sideSpace;
 }
 
@@ -85,13 +88,14 @@ section {
     }
   }
 
-  // data
+  // 컨텐츠1-1
   .contentWrap {
     @extend %contentWrap;
     .contentText {
       background-color: $buttonColorBeige1;
     }
   }
+  // 컨텐츠1-2
   .contentWrap2 {
     margin-top: $contentMargin;
     @extend %contentWrap;
@@ -105,5 +109,130 @@ section {
       }
       background-color: $buttonColorBeige2;
     }
+  }
+
+  // 컨텐츠2 :
+  .content2Wrap {
+    margin-top: $contentMargin;
+    margin-bottom: 60px;
+
+    a:nth-child(1) {
+      display: block;
+      font-family: $titleFont;
+      font-size: 8px;
+      text-align: center;
+    }
+    p:nth-child(2) {
+      margin-top: 20px;
+
+      text-align: center;
+      font-family: $textFont;
+      font-size: 28px;
+      opacity: 0.6;
+    }
+  }
+
+  // 컨텐츠3
+  .content3Wrap {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 5px;
+
+    article {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      /*
+        1. article이 짝수면서 
+        2. img인 경우 order 1 (order default:0)
+      */
+      &:nth-child(even) {
+        img {
+          order: 1;
+        }
+      }
+    }
+
+    .half {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $buttonColorBeige1;
+
+      p:nth-child(1) {
+        margin-bottom: 30px;
+      }
+
+      p:nth-child(2) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  // 컨텐츠4
+  .content4Wrap {
+    margin: 50px;
+    .contentData {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      div:nth-child(1) {
+        margin-bottom: 30px;
+      }
+      div:nth-child(2) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  // 컨텐츠6
+  .content6Wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0;
+
+    img {
+      width: 350px;
+      height: 345px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .content6Text {
+    margin: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+footer {
+  height: 250px;
+  background-color: $beige;
+  // justify-content: center;
+  .footer {
+    display: flex;
+    height: 250px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    ul {
+      margin: 25px;
+    }
+    li {
+      margin: 10px;
+    }
+    // @extend %centerFlex;
   }
 }

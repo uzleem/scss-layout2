@@ -2,6 +2,9 @@
 
 SCSS를 활용한 웹페이지 LAYOUT 클론코딩
 
+- Flex, Grid를 활용한 웹페이지 LAYOUT 구성
+- 간단한 CSS요소 추가
+
 <br><br>
 
 # 목차
